@@ -9,23 +9,24 @@ The NEAR Python Tooling initiative aims to make it as easy as possible for Pytho
 ```mermaid
 flowchart TD
     subgraph Tools ["Core Tools"]
-        SDK["near-sdk-py\nPython SDK"]
-        Nearc["nearc\nCompiler"]
-        Testing["near-pytest\nTesting Framework"]
+        SDK["near-sdk-py<br>Python SDK"]
+        Nearc["nearc<br>Compiler"]
+        Testing["near-pytest<br>Testing Framework"]
     end
-    
+
     Python["Python Developer"] --> SDK
     SDK --> Nearc
     Nearc --> WASM["contract.wasm"]
     WASM --> Deploy["NEAR Blockchain"]
     SDK --> Testing
     Testing --> Feedback["Developer Feedback"]
-    
+
     style Python fill:#f5f5ff,stroke:#333,stroke-width:2px
     style Deploy fill:#f5fff5,stroke:#333,stroke-width:2px
 ```
 
 This specification outlines:
+
 - A compiler for Python → WASM conversion
 - A comprehensive SDK for contract development
 - Testing frameworks for both unit and integration tests
@@ -51,14 +52,14 @@ This is a draft specification intended to gather feedback from the community. No
 
 ## Components Overview
 
-| Component | Purpose | Status |
-|-----------|---------|--------|
-| **nearc** | Python to WASM compiler | Planned |
-| **near-sdk-py** | Smart contract development SDK | Planned |
-| **near-pytest** | Unit testing framework | Planned |
-| **near-sandbox** | Local NEAR node | Planned |
-| **near-workspaces-py** | Integration testing | Planned |
-| **near-py-vm** | Fast simulation environment | Future |
+| Component              | Purpose                        | Status  |
+| ---------------------- | ------------------------------ | ------- |
+| **nearc**              | Python to WASM compiler        | Planned |
+| **near-sdk-py**        | Smart contract development SDK | Planned |
+| **near-pytest**        | Unit testing framework         | Planned |
+| **near-sandbox**       | Local NEAR node                | Planned |
+| **near-workspaces-py** | Integration testing            | Planned |
+| **near-py-vm**         | Fast simulation environment    | Future  |
 
 ## Feedback
 

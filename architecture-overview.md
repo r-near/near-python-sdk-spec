@@ -42,7 +42,7 @@ flowchart TD
     SDK --> Workspaces["near-workspaces-py"]
     SDK --> Nearc["nearc"]
 
-    VM["near-py-vm\n(future)"] --> SDK
+    VM["near-py-vm<br>(future)"] --> SDK
 
     Pytest --> Developer["Developer"]
     Workspaces --> Developer
@@ -136,19 +136,19 @@ flowchart TD
 flowchart LR
     subgraph Phase1 ["Phase 1"]
         Nearc["nearc"]
-        SDK["near-sdk-py\nCore API"]
+        SDK["near-sdk-py<br>Core API"]
     end
 
     subgraph Phase2 ["Phase 2"]
         PyTest["near-pytest"]
-        HighLevel["Collections\n& High-Level API"]
+        HighLevel["Collections<br>& High-Level API"]
         Sandbox["near-sandbox"]
         Workspaces["near-workspaces"]
     end
 
     subgraph Phase3 ["Phase 3"]
         VM["near-py-vm"]
-        Templates["Templates\n& Examples"]
+        Templates["Templates<br>& Examples"]
     end
 
     Nearc --> PyTest
