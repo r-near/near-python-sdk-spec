@@ -6,26 +6,30 @@ This repository contains the specification for Python tooling in the NEAR ecosys
 
 The NEAR Python Tooling initiative aims to make it as easy as possible for Python developers to build, test, and deploy smart contracts on NEAR Protocol.
 
-````mermaid
+```mermaid
 flowchart TD
-    Python["Python Developer"] --> Tools
+    Python["Python Developer"]
 
     subgraph Tools ["Core Tools"]
-        SDK["near-sdk-py<br>Python SDK"]
-        Nearc["nearc<br>Compiler"]
-        Testing["near-pytest<br>Testing Framework"]
+        SDK["Python SDK<br>(near-sdk-py)"]
+        Nearc["Compiler<br>(nearc)"]
+        Testing["Testing Framework<br>(near-pytest)"]
 
         SDK --> Nearc
         SDK --> Testing
     end
 
-    Tools --> WASM["contract.wasm"]
-    Tools --> Feedback["Developer Feedback"]
+    Python --> Tools
+    Nearc --> WASM["contract.wasm"]
     WASM --> Deploy["NEAR Blockchain"]
+    Testing --> Feedback["Developer Feedback"]
+    Feedback -- Iterate --> Python
 
     style Python fill:#f5f5ff,stroke:#333,stroke-width:2px
     style Deploy fill:#f5fff5,stroke:#333,stroke-width:2px
-    style Tools fill:#fffff5,stroke:#333,stroke-width:1px```
+    style Tools fill:#fffff5,stroke:#333,stroke-width:1px
+    style Feedback fill:#fff5f5,stroke:#333,stroke-width:2px
+```
 
 This specification outlines:
 
@@ -66,4 +70,3 @@ This is a draft specification intended to gather feedback from the community. No
 ## Feedback
 
 Please open an issue in this repository with any feedback or suggestions.
-````
